@@ -1,0 +1,24 @@
+<header id="page-header">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-6 m-auto text-center">
+              <h1 class="display-2">Check-out</h1>
+              <hr class="boldHr">
+              <p class="display-4">Anne's Bakery, Your Local Bakery</p>
+          </div>
+      </div>
+  </div>
+</header>
+<div class="container">
+  <div class="row" *ngIf="cart$ | async as cart">
+
+    <div class="col-6 py-4">
+      <app-shipping-form [cart]="cart"></app-shipping-form>
+    </div>
+
+    <div class="col-6 py-4">
+      <app-shopping-cart-summary [cart]="cart"></app-shopping-cart-summary>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,91 @@
+<header id="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 m-auto text-center">
+                <h1 class="display-2">About Us</h1>
+                <hr class="boldHr">
+                <p class="display-4">Anne's Bakery, Your Local Bakery</p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="info" class="py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <h3 class="display-3 pb-3 text-center" style="color: #e43a50">Our promise to you</h3>
+                <p style="font-size: 18px;"><b class="display-4">We care</b></p>
+                <p style="font-size: 18px; font-family: 'Mukta Malar', sans-serif;">From the selection of excellent ingredients, to the meticulous execution of our fine-tuned recipes; from the the packing of our pastries, to the timeliness of our deliveries  - We aim to give you the best possible experience. All of this, a small price to pay for that smile on your face!</p>
+            </div>
+            <div class="col-md-5 align-self-center">
+                <img src="assets/img/aboutFace.jpeg" class="img-fluid" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr>
+
+<section id="info" class="py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 align-self-center">
+                <img src="assets/img/abtStory.jpeg" class="img-fluid" alt="">
+            </div>
+            <div class="col-md-7">
+                <h3 class="display-3 py-3 text-center" style="color: #e43a50">Our story</h3>
+                <p style="font-size: 18px; font-family: 'Mukta Malar', sans-serif;"><b class="pr-2" style="font-size: 21px; font-family: 'Lobster';">In 2011  </b> Anne, driven by her passion for making pastries, started off baking from humble beginnings at the age of 9. Her main learning resources: baking books and recipes found online. Her baked goods shared solely with her loved ones: family and friends.</p>
+                <p style="font-size: 18px; font-family: 'Mukta Malar', sans-serif;"><b class="pr-2" style="font-size: 21px; font-family: 'Lobster';">Today </b> After attending a multitude of courses on pastry product and packaging, Anne, with the same love but a nurtured confidence, hopes to bring <a routerLink="/shop">her delicious cakes</a> to all of you in the Serangoon vicinity!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr>
+
+<section id="info" class="py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <h3 class="display-3 pb-3 text-center" style="color: #e43a50">Our System</h3>
+                <p style="font-size: 18px; font-family: 'Mukta Malar', sans-serif;">As of early 2018, Anne's Bakery operates as a home bakery with delivery/pick-up services; from Serangoon, to all of you, in Serangoon.</p>
+                <p style="font-size: 18px; font-family: 'Mukta Malar', sans-serif;">Upon submission of your order, our Bakery kicks into action and prepares the cakes with loving passion. Once completed, your order is packaged carefully and stored in the most optimal of conditions. The cakes are passed over to Anne's cautious Deliverymen, and your pastries, excited to delight your taste buds, are handed over to you. For those of you who prefer, we have a <a routerLink="/about" (click)="open(loc)">pick-up option</a> available too!</p>
+                <p style="font-size: 14px; font-family: 'Mukta Malar', sans-serif;"><a routerLink="/about" (click)="open(dates)">Delivery/pick-up dates</a></p>
+            </div>
+            <div class="col-md-5 align-self-center">
+                <img src="assets/img/abtSys.jpeg" class="img-fluid" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<ng-template #loc let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Pick-up location</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Serangoon: 97 Serangoon Garden Way, S555993</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+  </div>
+</ng-template>
+
+<ng-template #dates let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Delivery/Pick-up Dates</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Wed: Morning/Evening</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+  </div>
+</ng-template>

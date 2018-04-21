@@ -1,0 +1,15 @@
+.cartBtns {
+    border: solid 2px #E43A50;
+}
+
+button {
+color: #E43A50;
+background-color: white;
+border: solid 2px #E43A50;
+}
+
+button hover {
+    color: #E43A50 !important;
+    background-color: white !important;
+    cursor: pointer;
+}

@@ -1,0 +1,24 @@
+
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Order Summary</h5>
+    <p style="font-family: 'Mukta Malar', sans-serif;" class="card-text">You have {{ cart.totalItemsCt }} items in your shopping cart.</p>
+    <p *ngIf="cart.totalItemsCt == 0">
+      <button routerLink="/shop" class="btn btn-outline-primary cartBtns">Shop</button>
+    </p>
+    <ul class="list-group list-group-flush">
+      <li style="font-family: 'Mukta Malar', sans-serif;" *ngFor="let item of cart.items" class="list-group-item">
+        {{ item.quantity }} x {{ item.name }} ({{ item.qty }})
+        <div class="float-right">
+          {{ item.totalPrice | currency:'SGD':true }}
+        </div>
+      </li>
+      <li class="list-group-item font-weight-bold">
+        Total
+        <div style="font-family: 'Mukta Malar', sans-serif;" class="float-right">
+          {{ cart.totalPrice | currency:'SGD':true }}
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

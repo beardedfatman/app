@@ -1,0 +1,24 @@
+#page-header {
+  height: 400px;
+  background: url(/assets/img/howToP.png);
+  background-position: 0 -360px;
+  background-attachment: fixed;
+  color: #fff;
+  border-bottom: 1px #eee solid;
+  padding-top: 50px; }
+
+#about img {
+  margin-top: -50px; 
+}
+
+button {
+  color: #E43A50;
+  background-color: white;
+  border: solid 2px #E43A50;
+}
+
+button hover {
+    color: #E43A50 !important;
+    background-color: white !important;
+    cursor: pointer;
+}

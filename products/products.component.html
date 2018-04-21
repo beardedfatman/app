@@ -1,0 +1,56 @@
+<header id="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 m-auto text-center">
+                <h1 class="display-2">The Shop</h1>
+                <hr class="boldHr">
+                <p class="display-4">Anne's Bakery, Your Local Bakery</p>
+            </div>
+        </div>
+    </div>
+</header>
+<div id="products">
+    <section id="info" class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <img src="assets/img/product1.jpg" class="img-fluid" alt="">
+                    <div ngbDropdown placement="top-right" class="d-inline-block pt-3">
+                        <button class="btn cartBtns" id="dropdownBasic1" ngbDropdownToggle>Add to Cart</button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                            <button (click)="open(content)" (click)="addToCart(p)" style="font-family: 'Mukta Malar', sans-serif;" *ngFor="let p of products$ | async" class="dropdown-item">
+                                <!-- {{ p.qty }} for {{ p.price | currency:'SGD':true }} -->
+                                {{ p | json }}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <h3 class="display-4">Anne's Molten Lava Cake</h3>
+                    <p style="font-size: 18px; font-family: 'Mukta Malar', sans-serif;">Hoping to surprise a loved one? Looking for something to snack on after a meal with your family? Anne's shot at one of the world's ultimate chocolate desserts might just be your complement for the occasion!</p>
+                    <button type="button" class="btn cartBtns" placement="right"
+                            ngbPopover="Dark chocolate, butter, sugar, eggs, and flour" popoverTitle="Ingredient list">
+                    Ingredients
+                    </button>
+
+                    <p style="font-size: 14px; font-family: 'Mukta Malar', sans-serif;" class="pt-3">* We'd love to bake for large orders (events, gatherings, etc.) too! Please contact us with your requirements at <a href="mailto:bakery@annes-bakery.com">bakery@annes-bakery.com!</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<hr>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h2 class="modal-title">Thank you!</h2>
+  </div>
+  <div class="modal-body">
+    <p style="font-family: 'Mukta Malar', sans-serif;">Our Bakery has the ingredients prepared, and is ready to carry out your order. Head over to your basket (<i style="color: #E43A50;" name="shopping-basket" class="fa fa-shopping-basket" aria-hidden="true"></i>, top right-hand corner) to check out!</p>
+    <img class="img-fluid" src="assets/img/cartAdd.JPG" alt="">
+  </div>
+  <div class="modal-footer">
+    <button type="button" routerLink="/basket" class="btn btn-outline-dark cartBtns" (click)="c('Close click')">Go to Basket</button>
+    <button type="button" class="btn btn-outline-dark cartBtns" (click)="c('Close click')">Close</button>
+  </div>
+</ng-template>

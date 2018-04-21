@@ -1,0 +1,21 @@
+
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.navbar {
+    height: 80px;
+}
+
+.nav .navbar-nav .mx-auto {
+    color: #e53a50 !important;
+}
+
+button {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  color: white;
+  background-color: #E43A50;
+  cursor: pointer;
+}

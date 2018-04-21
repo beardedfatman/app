@@ -1,0 +1,76 @@
+<header id="page-header">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-6 m-auto text-center">
+              <h1 class="display-2">Basket</h1>
+              <hr class="boldHr">
+              <p class="display-4">Anne's Bakery, Your Local Bakery</p>
+          </div>
+      </div>
+  </div>
+</header>
+<div class="container py-3">
+  <div class="row col-10" *ngIf="cart$ | async as cart">
+    <p>
+      You have {{ cart.totalItemsCt }} items in your basket
+    </p>
+    <hr>
+    <button 
+      *ngIf="cart.items.length"
+      (click)="clearCart()"
+      class="btn btn-light btn-sm text-right">Clear Basket</button>
+    <table class="table py-3">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th class="" style="width: 230px;">Quantity</th>
+          <th class="text-right" style="width: 200px">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cart.items">
+          <td style="font-family: 'Mukta Malar', sans-serif;">
+            {{ item.name }} ({{ item.qty }} pc)
+          </td>
+          <td style="font-family: 'Mukta Malar', sans-serif;">
+            <div class="row">
+              <button
+                style="text-align: center; width: 40px;"
+                (click)="removeOne(item)"
+                class="btn btn-secondary">-</button>
+              <div class="col text-center">
+                {{ item.quantity }}
+              </div>
+              <button 
+                (click)="plusOne(item)"
+                style="text-align: center; width: 40px;"
+                class="btn btn-secondary">+</button>
+            </div>
+          </td>
+          <td class="text-right" style="font-family: 'Mukta Malar', sans-serif;">
+            {{ item.price * item.quantity | currency:'SGD':true }}
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th></th>
+          <th></th>
+          <th class="text-right" style="font-family: 'Mukta Malar', sans-serif;">
+            {{ cart.totalPrice | currency:'SGD':true }}
+          </th>
+        </tr>
+      </tfoot>
+    </table>
+      <button *ngIf="cart.items.length" class="btn btn-primary">
+        <a
+          routerLink="/check-out" 
+          class="btn">Check out</a>
+      </button>  
+      <button *ngIf="!cart.items.length" class="btn btn-primary">
+        <a
+          routerLink="/shop" 
+          class="btn">Shop now!</a>
+      </button>
+  </div>
+</div> 

@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="display-3 py-5">
+    <u>Orders</u>
+  </div>
+
+  <h1>Delivery</h1>
+  <table class="table pb-2">
+    <thead>
+      <tr>
+        <th>Customer</th>
+        <th>Date</th>
+        <th></th>
+      </tr>
+    </thead> 
+    <tbody>
+      <tr *ngFor="let order of ordersD$ | async">
+        <td>{{ order.shipping.name }}</td>
+        <td>{{ order.datePlaced | date}}</td>
+        <td>
+          <a href="#">View</a>
+        </td>
+      </tr>
+    </tbody> 
+  </table>
+
+  <h1>Pick-up</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Customer</th>
+        <th>Date</th>
+        <th></th>
+      </tr>
+    </thead> 
+    <tbody>
+      <tr *ngFor="let order of ordersP$ | async">
+        <td>{{ order.shipping.name }}</td>
+        <td>{{ order.datePlaced | date}}</td>
+        <td>
+          <a href="#">View</a>
+        </td>
+      </tr>
+    </tbody> 
+  </table>
+</div>
+  
